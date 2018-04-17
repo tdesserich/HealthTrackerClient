@@ -52,10 +52,17 @@ class CurrentMedsIndex extends Component {
             })
     }
     
+    setUpdatedMeds = (event, currentMed) => {
+        this.setState({
+            currentMedsToUpdate: currentMed, //2
+            updatePressed: true //1
+        })
+    }
+    
     render() {
         const currentMeds = this.state.currentMeds.length >= 1 ?
             <CurrentMedsDisplay currentMeds={this.state.currentMeds}
-                delete={this.currentMedsDelete} update={this.currentMedsUpdate} /> : <h2>Log a medication to see results</h2>
+                delete={this.currentMedsDelete} update={this.setUpdatedMeds} /> : <h2>Log a medication to see results</h2>
         return (
             <Container>
                 <Row>
@@ -68,7 +75,7 @@ class CurrentMedsIndex extends Component {
                 </Row>
                 <Col md="12">                      
                     {     
-                        this.state.updatePressed ? <this.currentMedsUpdate t={this.state.updatePressed} update={this.currentMedsUpdate} currentMeds={this.state.currentMedsUpdate} />
+                        this.state.updatePressed ? <CurrentMedsUpdate t={this.state.updatePressed} update={this.currentMedsUpdate} currentMeds={this.state.currentMedsToUpdate} />
                         : <div></div>
                     } 
                 </Col>

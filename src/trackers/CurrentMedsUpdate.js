@@ -16,7 +16,7 @@ class CurrentMedsUpdate extends Component {
         super(props)
 
         this.state = {
-            id: '',  //CHECK THIS
+            id: '',  
             medicationName: '',
             reason: '',
             dosage: '',
