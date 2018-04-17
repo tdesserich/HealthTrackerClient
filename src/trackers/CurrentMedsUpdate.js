@@ -59,7 +59,7 @@ class CurrentMedsUpdate extends Component {
                             </FormGroup>
                             <FormGroup>
                                 <Label for="reason">Reason for taking</Label>
-                                <Input type="reason" name="reason" id="reason" value={this.state.reason} onChange={this.handleChange} placeholder="Ex: Allergies, Acid reflux, Vitamin" />
+                                <Input type="text" name="reason" id="reason" value={this.state.reason} onChange={this.handleChange} placeholder="Ex: Allergies, Acid reflux, Vitamin" />
                             </FormGroup>
                             <FormGroup>
                                 <Label for="dosage">Dosage</Label>

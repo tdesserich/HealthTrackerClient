@@ -1,5 +1,4 @@
 import React from 'react';
-// import CurrentMedsUpdate from './CurrentMedsUpdate';
 import {
     Table,
     Button
@@ -35,7 +34,6 @@ const CurrentMedsDisplay = (props) => {
                 <td>{currentMeds.startDate}</td>
                 <td>                
                     <Button id={currentMeds.id} onClick={props.delete} color="danger">Delete</Button>|
-                    {/* <CurrentMedsUpdate />  */}
                     <Button id={currentMeds.id} onClick={e => props.update(e, currentMeds)} color="warning">Update</Button>
                 </td>
             </tr>

@@ -37,7 +37,7 @@ class CurrentMedsIndex extends Component {
             })
     }
 
-    currentMedsUpdate = (event, updatedMeds) => { // PROBLEM HERE
+    currentMedsUpdate = (event, updatedMeds) => { 
         fetch(`http://localhost:3000/currentmeds/${updatedMeds.id}`, {
             method: 'PUT', 
             body: JSON.stringify({ currentMeds: updatedMeds }), 
@@ -54,8 +54,8 @@ class CurrentMedsIndex extends Component {
     
     setUpdatedMeds = (event, currentMed) => {
         this.setState({
-            currentMedsToUpdate: currentMed, //2
-            updatePressed: true //1
+            currentMedsToUpdate: currentMed, 
+            updatePressed: true 
         })
     }
     
@@ -75,7 +75,7 @@ class CurrentMedsIndex extends Component {
                 </Row>
                 <Col md="12">                      
                     {     
-                        this.state.updatePressed ? <CurrentMedsUpdate t={this.state.updatePressed} update={this.currentMedsUpdate} currentMeds={this.state.currentMedsToUpdate} />
+                        this.state.updatePressed ? <CurrentMedsUpdate update={this.currentMedsUpdate} currentMeds={this.state.currentMedsToUpdate} />
                         : <div></div>
                     } 
                 </Col>
@@ -84,5 +84,5 @@ class CurrentMedsIndex extends Component {
     }
 }
 
-//see Mod 7, Step 2
+
 export default CurrentMedsIndex;
