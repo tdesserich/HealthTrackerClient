@@ -25,6 +25,16 @@ class CurrentMedsUpdate extends Component {
         };
     }
 
+    componentWillMount() {
+        this.setState({
+            id: this.props.currentMeds.id, // Mod 7, Step 4
+            medicationName: this.props.currentMeds.medicationName,
+            reason: this.props.currentMeds.reason,
+            dosage: this.props.currentMeds.dosage,
+            startDate: this.props.currentMeds.startDate
+        })
+    }
+
     handleChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value
@@ -36,22 +46,11 @@ class CurrentMedsUpdate extends Component {
         this.props.update(event, this.state)
     }
 
-    componentWillMount() {
-        this.setState({
-            id: this.props.currentMeds.id,
-            medicationName: this.props.currentMeds.medicationName,
-            reason: this.props.currentMeds.reason,
-            dosage: this.props.currentMeds.dosage,
-            startDate: this.props.currentMeds.startDate
-        })
-    }
-
-
     render() {
         return (
             <div>
                 <Modal isOpen={true} >
-                    <ModalHeader >Log a Medication</ModalHeader>
+                    <ModalHeader>Update a Medication</ModalHeader>
                     <ModalBody>
                         <Form onSubmit={this.handleSubmit} >
                             <FormGroup>

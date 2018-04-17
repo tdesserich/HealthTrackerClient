@@ -14,7 +14,7 @@ class CurrentMedsIndex extends Component {
         this.state = {
             currentMeds: [],
             updatePressed: false,
-            createMedsToUpdate: {}
+            currentMedsToUpdate: {}
 
         }
     }
@@ -32,8 +32,8 @@ class CurrentMedsIndex extends Component {
             })
         })
             .then((res) => res.json())
-            .then((logData) => {
-                return this.setState({ currentMeds: logData })
+            .then((data) => {
+                return this.setState({ currentMeds: data })
             })
     }
 
@@ -66,15 +66,16 @@ class CurrentMedsIndex extends Component {
                         {currentMeds}
                     </Col>
                 </Row>
-                <Col md="12">  
+                <Col md="12">                      
                     {     
-                        this.state.updatePressed ? <this.CurrentMedsUpdate t={this.state.updatePressed} update={this.CurrentMedsUpdate} currentMeds={this.state.currentMedsUpdate} />
+                        this.state.updatePressed ? <this.currentMedsUpdate t={this.state.updatePressed} update={this.currentMedsUpdate} currentMeds={this.state.currentMedsUpdate} />
                         : <div></div>
-                    }
+                    } 
                 </Col>
             </Container>
         )
     }
 }
 
+//see Mod 7, Step 2
 export default CurrentMedsIndex;

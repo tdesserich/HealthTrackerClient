@@ -1,4 +1,5 @@
 import React from 'react';
+// import CurrentMedsUpdate from './CurrentMedsUpdate';
 import {
     Table,
     Button
@@ -23,7 +24,7 @@ const CurrentMedsDisplay = (props) => {
                 </thead>
                 <tbody>
                 {
-    props.currentMeds.map((currentMeds, id) => { 
+                props.currentMeds.map((currentMeds, id) => { 
         return ( 
             <tr key={id}> 
                 <th scope="row">{currentMeds.id}</th>
@@ -33,7 +34,8 @@ const CurrentMedsDisplay = (props) => {
                 <td>{currentMeds.dosage}</td>
                 <td>{currentMeds.startDate}</td>
                 <td>                
-                    <Button id={currentMeds.id} onClick={props.delete} color="danger">Delete</Button> |
+                    <Button id={currentMeds.id} onClick={props.delete} color="danger">Delete</Button>|
+                    {/* <CurrentMedsUpdate />  */}
                     <Button id={currentMeds.id} onClick={e => props.update(e, currentMeds)} color="warning">Update</Button>
                 </td>
             </tr>

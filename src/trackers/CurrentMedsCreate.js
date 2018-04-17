@@ -37,7 +37,7 @@ class CurrentMedsCreate extends Component {
             })
         })
         .then((res) => res.json())
-        .then((logData) => {
+        .then((data) => {
             this.props.updateCurrentMedsArray();
             this.setState({
                 id:'',
