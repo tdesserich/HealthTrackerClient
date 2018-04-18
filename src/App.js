@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import Auth from './auth/Auth';
-import SiteBar from './home/SiteBar';
-import Splash from './home/Splash';
+import SiteBar from './site/SiteBar';
+import Splash from './site/Splash';
+import CurrentMedsIndex from './trackers/CurrentMedsIndex';
+import DiscMedsIndex from './trackers/DiscMedsIndex';
+import IncidentIndex from './trackers/IncidentIndex';
+
 import {
   BrowserRouter as Router,
   Route,
@@ -42,7 +47,13 @@ class App extends Component {
       return (
         <Switch>
           <Route path='/' exact>
-            <Splash sessionToken={this.state.sessionToken} />
+            <CurrentMedsIndex token={this.state.sessionToken} />
+          </Route>
+          <Route path='/discmeds' exact>
+            <DiscMedsIndex token={this.state.sessionToken} />
+          </Route>
+          <Route path='/incidents' exact>
+            <IncidentIndex token={this.state.sessionToken} />
           </Route>
         </Switch>
       )
