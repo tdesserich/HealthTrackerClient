@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './App.css';
 import Auth from './auth/Auth';
 import SiteBar from './home/SiteBar';
 import Splash from './home/Splash';

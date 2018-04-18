@@ -7,12 +7,10 @@ import {
 const IncidentDisplay = (props) => {
     return (
         <div>
-            <h3>Surgeries, Hospitalizations, or Event</h3>
-            <hr />
+            <h3>Surgeries, Hospitalizations, or Events</h3>
             <Table striped>
                 <thead>
                     <tr>
-                        <th>#</th>
                         <th>Event</th>
                         <th>Date</th>
                         <th>Description</th>
@@ -24,13 +22,13 @@ const IncidentDisplay = (props) => {
                 props.incidentIndex.map((incident, id) => {
         return ( 
             <tr key={id}> 
-                <th scope="row">{incident.id}</th>
+                {/* <th scope="row">{incident.id}</th> */}
                 <td>{incident.event}</td>
                 <td>{incident.date}</td>
                 <td>{incident.description}</td>
                 <td>                
-                    <Button id={incident.id} onClick={props.delete} color="danger">Delete</Button>|
-                    <Button id={incident.id} onClick={e => props.update(e, incident)} color="warning">Update</Button>
+                    <Button id={incident.id} onClick={e => props.delete(e, incident)} color="danger" size="sm">Delete</Button>| 
+                    <Button id={incident.id} onClick={e => props.update(e, incident)} color="warning" size="sm">Update</Button>
                 </td>
             </tr>
         )

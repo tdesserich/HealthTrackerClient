@@ -1,7 +1,15 @@
 import React from 'react';
 import {
     Table,
-    Button
+    Button,
+    Card,
+    CardBody,
+    CardTitle,
+    CardText,
+    CardDeck,
+    CardFooter,
+    Col,
+    Row
 } from 'reactstrap';
 
 const DiscMedsDisplay = (props) => {
@@ -9,41 +17,34 @@ const DiscMedsDisplay = (props) => {
         <div>
             <h3>Discontinued Medications</h3>
             <hr />
-            <Table striped>
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Medication Name</th>
-                        <th>Reason for Discontinuing</th>
-                        <th>Reaction</th>
-                        <th>Dosage</th>
-                        <th>Frequency</th>
-                        <th>End Date</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                {
-                props.discMeds.map((discMeds, id) => { 
-        return ( 
-            <tr key={id}> 
-                <th scope="row">{discMeds.id}</th>
-                <td>{discMeds.medicationName}</td>
-                <td>{discMeds.reason}</td>
-                <td>{discMeds.reaction}</td>
-                <td>{discMeds.frequency}</td>
-                <td>{discMeds.dosage}</td>
-                <td>{discMeds.startDate}</td>
-                <td>                
-                    <Button id={discMeds.id} onClick={props.delete} color="danger">Delete</Button>|
-                    <Button id={discMeds.id} onClick={e => props.update(e, discMeds)} color="warning">Update</Button>
-                </td>
-            </tr>
-        )
-    })
-}
-                </tbody>
-            </Table>
+            <CardDeck>
+                {props.discMeds.map((discMeds, id) => {
+                    return (
+                        <Col md="4">
+                            <Row className="h-100">
+                                <Card className="text-center" key={id}>
+                                    <CardBody className="text-center">
+                                        <CardTitle>{discMeds.medicationName}</CardTitle>
+                                        <CardText style={{ fontWeight: "bold" }}>Reason for taking:</CardText>
+                                        <CardText>{discMeds.reason}</CardText>
+                                        <CardText style={{ fontWeight: "bold" }}>Reason for discontinuing:</CardText>
+                                        <CardText>{discMeds.reaction}</CardText>
+                                        <CardText style={{ fontWeight: "bold" }}>Frequency:</CardText>
+                                        <CardText>{discMeds.frequency}</CardText>
+                                        <CardText style={{ fontWeight: "bold" }}>Dosage:</CardText>
+                                        <CardText>{discMeds.dosage}</CardText>
+                                        <CardText style={{ fontWeight: "bold" }}>Start date:</CardText>
+                                        <CardText>{discMeds.startDate}</CardText>
+                                        <Button id={discMeds.id} onClick={e => props.delete(e, discMeds)} color="danger" size="sm">Delete</Button>|
+                                    <Button id={discMeds.id} onClick={e => props.update(e, discMeds)} color="warning" size="sm">Update</Button>
+                                    </CardBody>
+                                </Card>
+                            </Row>
+                        </Col>
+                    )
+                })
+                }
+            </CardDeck>
         </div>
     );
 }

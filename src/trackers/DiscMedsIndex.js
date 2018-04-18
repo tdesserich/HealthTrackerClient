@@ -58,6 +58,19 @@ class DiscMedsIndex extends Component {
             updatePressed: true 
         })
     }
+
+    discMedsDelete = (event, deletedMeds) => { 
+        fetch(`http://localhost:3000/discmeds/${deletedMeds.id}`, {
+            method: 'DELETE', 
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'Authorization': this.props.token
+            })
+        })
+            .then((res) => {
+                this.fetchDiscMeds(); 
+            })
+    }
     
     render() {
         const discMeds = this.state.discMeds.length >= 1 ?

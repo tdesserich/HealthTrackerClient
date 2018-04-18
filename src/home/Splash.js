@@ -7,7 +7,9 @@ const Splash = (props) => {
     return (
         <div>
             <CurrentMedsIndex token={props.sessionToken} />
+            <br/>
             <DiscMedsIndex token={props.sessionToken} />
+            <br/>
             <IncidentIndex token={props.sessionToken} />
         </div>    
     )

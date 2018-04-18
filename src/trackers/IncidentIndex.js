@@ -37,7 +37,7 @@ class IncidentIndex extends Component {
             })
     }
 
-   IncidentUpdate = (event, updatedIncident) => { 
+   incidentUpdate = (event, updatedIncident) => { 
         fetch(`http://localhost:3000/incident/${updatedIncident.id}`, {
             method: 'PUT', 
             body: JSON.stringify({ incident: updatedIncident }), 
@@ -58,6 +58,20 @@ class IncidentIndex extends Component {
             updatePressed: true 
         })
     }
+
+
+    incidentDelete = (event, updatedIncident) => { 
+        fetch(`http://localhost:3000/incident/${updatedIncident.id}`, {
+            method: 'DELETE', 
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'Authorization': this.props.token
+            })
+        })
+            .then((res) => {
+                this.fetchIncident(); 
+            })
+    }
     
     render() {
         const incident = this.state.incident.length >= 1 ?
@@ -75,7 +89,7 @@ class IncidentIndex extends Component {
                 </Row>
                 <Col md="12">                      
                     {     
-                        this.state.updatePressed ? <IncidentUpdate update={this.IncidentUpdate} incident={this.state.incidentToUpdate} />
+                        this.state.updatePressed ? <IncidentUpdate update={this.incidentUpdate} incident={this.state.incidentToUpdate} />
                         : <div></div>
                     } 
                 </Col>

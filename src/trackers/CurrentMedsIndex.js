@@ -58,6 +58,22 @@ class CurrentMedsIndex extends Component {
             updatePressed: true 
         })
     }
+
+    currentMedsDelete = (event, deletedMeds) => { 
+        fetch(`http://localhost:3000/currentmeds/${deletedMeds.id}`, {
+            method: 'DELETE', 
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'Authorization': this.props.token
+            })
+        })
+            .then((res) => {
+                this.fetchCurrentMeds(); 
+            })
+    }
+
+
+
     
     render() {
         const currentMeds = this.state.currentMeds.length >= 1 ?
@@ -79,6 +95,7 @@ class CurrentMedsIndex extends Component {
                         : <div></div>
                     } 
                 </Col>
+
             </Container>
         )
     }

@@ -1,7 +1,16 @@
 import React from 'react';
 import {
     Table,
-    Button
+    Button,
+    Card,
+    CardBody,
+    CardTitle,
+    CardText,
+    CardDeck,
+    CardGroup,
+    Row,
+    Col,
+    CardFooter
 } from 'reactstrap';
 
 const CurrentMedsDisplay = (props) => {
@@ -9,39 +18,32 @@ const CurrentMedsDisplay = (props) => {
         <div>
             <h3>Current Medications</h3>
             <hr />
-            <Table striped>
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Medication Name</th>
-                        <th>Reason for Taking</th>
-                        <th>Dosage</th>
-                        <th>Frequency</th>
-                        <th>Start Date</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                {
-                props.currentMeds.map((currentMeds, id) => { 
-        return ( 
-            <tr key={id}> 
-                <th scope="row">{currentMeds.id}</th>
-                <td>{currentMeds.medicationName}</td>
-                <td>{currentMeds.reason}</td>
-                <td>{currentMeds.frequency}</td>
-                <td>{currentMeds.dosage}</td>
-                <td>{currentMeds.startDate}</td>
-                <td>                
-                    <Button id={currentMeds.id} onClick={props.delete} color="danger">Delete</Button>|
-                    <Button id={currentMeds.id} onClick={e => props.update(e, currentMeds)} color="warning">Update</Button>
-                </td>
-            </tr>
-        )
-    })
-}
-                </tbody>
-            </Table>
+            <CardDeck>
+                {props.currentMeds.map((currentMeds, id) => {
+                    return (
+                        <Col md="4">
+                            <Row className="h-100">
+                                <Card className="text-center" key={id}>
+                                    <CardBody className="text-center">
+                                        <CardTitle>{currentMeds.medicationName}</CardTitle>
+                                        <CardText style={{ fontWeight: "bold" }}>Reason for taking:</CardText>
+                                        <CardText>{currentMeds.reason}</CardText>
+                                        <CardText style={{ fontWeight: "bold" }}>Frequency:</CardText>
+                                        <CardText>{currentMeds.frequency}</CardText>
+                                        <CardText style={{ fontWeight: "bold" }}>Dosage:</CardText>
+                                        <CardText>{currentMeds.dosage}</CardText>
+                                        <CardText style={{ fontWeight: "bold" }}>Start date:</CardText>
+                                        <CardText>{currentMeds.startDate}</CardText>
+                                        <Button id={currentMeds.id} onClick={e => props.delete(e, currentMeds)} color="danger" size="sm">Delete</Button>|
+                                        <Button id={currentMeds.id} onClick={e => props.update(e, currentMeds)} color="warning" size="sm">Update</Button>
+                                    </CardBody>
+                                </Card>
+                            </Row>
+                        </Col>
+                    )
+                })
+                }
+            </CardDeck>
         </div>
     );
 }
