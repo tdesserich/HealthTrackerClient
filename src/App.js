@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import Auth from './auth/Auth';
 import SiteBar from './site/SiteBar';

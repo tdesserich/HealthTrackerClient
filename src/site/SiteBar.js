@@ -6,7 +6,7 @@ class SiteBar extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isOpen: false
+            isOpen: true
         };
     }
 
@@ -16,42 +16,46 @@ class SiteBar extends Component {
         });
     }
 
-    protectedNavViews = () => {
-        if (this.props.token === localStorage.getItem('token')) {
-            return (
-                <Navbar className="navbar">
-                    <NavbarBrand href="/" className="navbarBrand">Health Tracker</NavbarBrand>
-                    <NavItem>
-                        <NavLink href="/">Current Meds</NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink href="/discmeds">Discontinued Meds</NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink href="/incidents">Medical Events</NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <Button onClick={() => this.props.clickLogout()}>Logout</Button>
-                    </NavItem>
-                </Navbar>
-                )
-        // } else {
-        //         <Nav className="ml-auto" navbar>     
-        //         </Nav>
-        }
-    }
+
+
 
     render() {
         return (
             <div>
-                <Navbar className="navbar">
-                    <NavbarBrand href="/" className="navbarBrand">Health Tracker</NavbarBrand>
+                <Navbar color="light" light expand="md">
+                    <NavbarBrand href="/">reactstrap</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
-                            {this.protectedNavViews()}
+
+
+                        {this.props.token === localStorage.getItem('token') ?
+                            <Nav className="ml-auto" navbar>
+                                <NavItem>
+                                    <NavLink href="/">Current Meds</NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink href="/discmeds">Discontinued Meds</NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <NavLink href="/incidents">Medical Events</NavLink>
+                                </NavItem>
+                                <NavItem>
+                                    <Button onClick={() => this.props.clickLogout()}>Logout</Button>
+                                </NavItem>
+                            </Nav>
+
+
+
+                            : ''
+
+
+                        }
+
+
                     </Collapse>
                 </Navbar>
             </div>
+
         )
     }
 }
@@ -60,3 +64,18 @@ class SiteBar extends Component {
 export default SiteBar;
 
 
+// <div>
+            //     <Navbar color="light" light expand="md">
+            //         <NavbarBrand href="/" className="navbarBrand">Health Tracker</NavbarBrand>
+            //         {/* <NavbarToggler onClick={this.toggle} />
+            //         <Collapse isOpen={this.state.isOpen} navbar> */}
+            //             <Nav className="ml-auto" navbar>
+            //                 {this.protectedNavViews()}
+            //                 <NavItem>
+            //                     <NavLink href="/">Current Meds</NavLink>
+            //                 </NavItem>
+            //             </Nav>
+            //         {/* </Collapse> */}
+            //     </Navbar>
+
+            // </div>
