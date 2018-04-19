@@ -2,11 +2,7 @@ import React, { Component } from 'react';
 import DiscMedsCreate from './DiscMedsCreate';
 import DiscMedsDisplay from './DiscMedsDisplay';
 import DiscMedsUpdate from './DiscMedsUpdate';
-import {
-    Container,
-    Row,
-    Col
-} from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 
 class DiscMedsIndex extends Component {
     constructor(props) {

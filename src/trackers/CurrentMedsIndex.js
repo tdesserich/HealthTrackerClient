@@ -2,11 +2,7 @@ import React, { Component } from 'react';
 import CurrentMedsCreate from './CurrentMedsCreate';
 import CurrentMedsDisplay from './CurrentMedsDisplay';
 import CurrentMedsUpdate from './CurrentMedsUpdate';
-import {
-    Container,
-    Row,
-    Col
-} from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 
 class CurrentMedsIndex extends Component {
     constructor(props) {

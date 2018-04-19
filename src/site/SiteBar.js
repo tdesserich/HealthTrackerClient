@@ -1,18 +1,6 @@
 import React, { Component } from 'react';
-import CurrentMedsIndex from '../trackers/DiscMedsIndex';
-import DiscMedsIndex from '../trackers/CurrentMedsIndex';
-import IncidentIndex from '../trackers/IncidentIndex';
-
-import {
-    Navbar,
-    NavbarBrand,
-    NavItem,
-    Button,
-    Collapse,
-    Nav,
-    NavLink,
-    NavbarToggler
-} from 'reactstrap';
+import { Navbar, NavbarBrand, NavItem, Button, Collapse, Nav, NavLink, NavbarToggler } from 'reactstrap';
+import './site.css'
 
 class SiteBar extends Component {
     constructor(props) {
@@ -31,7 +19,8 @@ class SiteBar extends Component {
     protectedNavViews = () => {
         if (this.props.token === localStorage.getItem('token')) {
             return (
-                <Nav className="ml-auto" navbar>
+                <Navbar className="navbar">
+                    <NavbarBrand href="/" className="navbarBrand">Health Tracker</NavbarBrand>
                     <NavItem>
                         <NavLink href="/">Current Meds</NavLink>
                     </NavItem>
@@ -44,7 +33,7 @@ class SiteBar extends Component {
                     <NavItem>
                         <Button onClick={() => this.props.clickLogout()}>Logout</Button>
                     </NavItem>
-                </Nav>
+                </Navbar>
                 )
         // } else {
         //         <Nav className="ml-auto" navbar>     
@@ -55,8 +44,8 @@ class SiteBar extends Component {
     render() {
         return (
             <div>
-                <Navbar color="light" light expand="md">
-                    <NavbarBrand href="/">Health Tracker</NavbarBrand>
+                <Navbar className="navbar">
+                    <NavbarBrand href="/" className="navbarBrand">Health Tracker</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                             {this.protectedNavViews()}

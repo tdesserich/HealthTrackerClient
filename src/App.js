@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import Auth from './auth/Auth';
 import SiteBar from './site/SiteBar';
-import Splash from './site/Splash';
+// import Splash from './site/Splash';
 import CurrentMedsIndex from './trackers/CurrentMedsIndex';
 import DiscMedsIndex from './trackers/DiscMedsIndex';
 import IncidentIndex from './trackers/IncidentIndex';
@@ -69,7 +69,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className="appDiv">
           <SiteBar token={this.state.sessionToken} clickLogout={this.logout} />
           {this.protectedViews()}
         </div>

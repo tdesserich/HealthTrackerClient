@@ -1,12 +1,5 @@
 import React, { Component } from "react";
-import {
-    Form,
-    FormGroup,
-    FormFeedback,
-    Label,
-    Input,
-    Button
-} from 'reactstrap';
+import { Form, FormGroup, FormFeedback, Label, Input, Button } from 'reactstrap';
 
 class Signup extends Component {
     constructor(props) {
@@ -72,17 +65,17 @@ class Signup extends Component {
     render() {
         return (
             <div>
-                <h1>Sign Up</h1>
+                <h2>Sign Up</h2>
                 <Form onSubmit={this.handleSubmit} >
                     <FormGroup>
                         <Label for="username">Username</Label>
-                        <Input id="username" type="text" name="username" value={this.state.username} invalid={!this.state.usernameValid} placeholder="enter username" onChange={this.handleChange} />
+                        <Input type="text" name="username" value={this.state.username} invalid={!this.state.usernameValid} placeholder="Enter email address" onChange={this.handleChange} required />
                         <FormFeedback>Enter a valid email</FormFeedback>
                     </FormGroup>
                     <FormGroup>
                         <Label for="password">Password</Label>
-                        <Input id="signup_password" type="password" name="password" value={this.state.password} invalid={!this.state.passwordValid} placeholder="enter password" onChange={this.handleChange} />
-                        <FormFeedback>Enter a password 6 characters or more</FormFeedback>
+                        <Input type="password" name="password" value={this.state.password} invalid={!this.state.passwordValid} placeholder="Enter password - at least 6 characters" onChange={this.handleChange} required />
+                        <FormFeedback>Enter a password - at least 6 characters</FormFeedback>
                     </FormGroup>
                     <Button type="submit">Submit</Button>
                 </Form>

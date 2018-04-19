@@ -1,17 +1,5 @@
 import React from 'react';
-import {
-    Table,
-    Button,
-    Card,
-    CardBody,
-    CardTitle,
-    CardText,
-    CardDeck,
-    CardGroup,
-    Row,
-    Col,
-    CardFooter
-} from 'reactstrap';
+import { Row, Col, Button, CardDeck, Card, CardBody, CardTitle, CardText } from 'reactstrap';
 
 const CurrentMedsDisplay = (props) => {
     return (

@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
-import { 
-    Button, 
-    Form, 
-    FormGroup, 
-    Label, 
-    Input 
-} from 'reactstrap';
+import { FormGroup, Form, Label, Input, Button } from 'reactstrap';
 
 class CurrentMedsCreate extends Component {
     constructor(props) {

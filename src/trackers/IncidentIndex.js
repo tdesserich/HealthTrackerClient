@@ -2,11 +2,7 @@ import React, { Component } from 'react';
 import IncidentCreate from './IncidentCreate';
 import IncidentDisplay from './IncidentDisplay';
 import IncidentUpdate from './IncidentUpdate';
-import {
-    Container,
-    Row,
-    Col
-} from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 
 class IncidentIndex extends Component {
     constructor(props) {

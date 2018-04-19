@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
-import { 
-    Button, 
-    Form, 
-    FormGroup, 
-    Label, 
-    Input 
-} from 'reactstrap';
+import { Form, FormGroup, Button, Label, Input } from 'reactstrap';
 
 class IncidentCreate extends Component {
     constructor(props) {

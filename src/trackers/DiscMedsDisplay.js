@@ -1,16 +1,5 @@
 import React from 'react';
-import {
-    Table,
-    Button,
-    Card,
-    CardBody,
-    CardTitle,
-    CardText,
-    CardDeck,
-    CardFooter,
-    Col,
-    Row
-} from 'reactstrap';
+import { Col, Row, Button, CardDeck, Card, CardBody, CardTitle, CardText } from 'reactstrap';
 
 const DiscMedsDisplay = (props) => {
     return (

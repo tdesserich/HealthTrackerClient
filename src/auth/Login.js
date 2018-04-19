@@ -1,15 +1,6 @@
 import React, { Component } from "react";
-import validator from 'react-validation';
-import {
-    Form,
-    FormGroup,
-    Label,
-    Input,
-    Button,
-    FormFeedback
-}
-    from 'reactstrap';
-
+import { Form, FormGroup, Label, Input, Button, FormFeedback, UncontrolledCarousel } from 'reactstrap';  
+  
 
 class Login extends Component {
     constructor(props) {
@@ -76,17 +67,17 @@ class Login extends Component {
     render() {
         return (
             <div>
-                <h1>Login</h1>
+                <h2>Login</h2>
                 <Form onSubmit={this.handleSubmit}>
                     <FormGroup>
                         <Label for="username">Username</Label>
-                        <Input id="login_username" type="email" name="username" value={this.state.username} invalid={!this.state.usernameValid} placeholder="enter username" onChange={this.handleChange} />
-                        <FormFeedback>Enter a valid email</FormFeedback>
+                        <Input type="email" name="username" value={this.state.username} invalid={!this.state.usernameValid} placeholder="Username" onChange={this.handleChange} required />
+                        <FormFeedback>Enter a valid email address</FormFeedback>
                     </FormGroup>
                     <FormGroup>
                         <Label for="password">Password</Label>
-                        <Input id="login_password" type="text" name="password" value={this.state.password} invalid={!this.state.passwordValid} placeholder="enter password" onChange={this.handleChange} />
-                        <FormFeedback>Enter a password 6 characters or more</FormFeedback>
+                        <Input type="text" name="password" value={this.state.password} invalid={!this.state.passwordValid} placeholder="Password" onChange={this.handleChange} required />
+                        <FormFeedback>Password must be 6 or more characters</FormFeedback>
                     </FormGroup>
                     <Button type="submit"> Submit </Button>
                 </Form>
@@ -94,4 +85,5 @@ class Login extends Component {
         )
     }
 }
+
 export default Login;

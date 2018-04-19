@@ -1,14 +1,5 @@
 import React, { Component } from 'react';
-import {
-    Button,
-    Form,
-    FormGroup,
-    Label,
-    Input,
-    Modal,
-    ModalHeader,
-    ModalBody
-} from 'reactstrap';
+import { Form, FormGroup, Label, Button, Input, Modal, ModalHeader, ModalBody } from 'reactstrap';
 
 class CurrentMedsUpdate extends Component {
 

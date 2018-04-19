@@ -1,14 +1,5 @@
 import React, { Component } from 'react';
-import {
-    Button,
-    Form,
-    FormGroup,
-    Label,
-    Input,
-    Modal,
-    ModalHeader,
-    ModalBody
-} from 'reactstrap';
+import { FormGroup, Form, Label, Input, Button, Modal, ModalHeader, ModalBody } from 'reactstrap';
 
 class DiscMedsUpdate extends Component {
 
