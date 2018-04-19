@@ -21,9 +21,9 @@ const CurrentMedsDisplay = (props) => {
             <CardDeck>
                 {props.currentMeds.map((currentMeds, id) => {
                     return (
-                        <Col md="4">
+                        <Col md="4" key={id}>
                             <Row className="h-100">
-                                <Card className="text-center" key={id}>
+                                <Card className="text-center">
                                     <CardBody className="text-center">
                                         <CardTitle>{currentMeds.medicationName}</CardTitle>
                                         <CardText style={{ fontWeight: "bold" }}>Reason for taking:</CardText>

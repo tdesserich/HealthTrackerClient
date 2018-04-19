@@ -66,13 +66,11 @@ class App extends Component {
     }
   }
   
-  
-  
   render() {
     return (
       <Router>
         <div>
-          <SiteBar clickLogout={this.logout} />
+          <SiteBar token={this.state.sessionToken} clickLogout={this.logout} />
           {this.protectedViews()}
         </div>
       </Router>

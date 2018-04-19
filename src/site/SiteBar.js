@@ -10,7 +10,7 @@ import {
     Button,
     Collapse,
     Nav,
-    NavLink, 
+    NavLink,
     NavbarToggler
 } from 'reactstrap';
 
@@ -22,41 +22,52 @@ class SiteBar extends Component {
         };
     }
 
-
     toggle = () => {
         this.setState({
             isOpen: !this.state.isOpen
         });
     }
-    
-    
+
+    protectedNavViews = () => {
+        if (this.props.token === localStorage.getItem('token')) {
+            return (
+                <Nav className="ml-auto" navbar>
+                    <NavItem>
+                        <NavLink href="/">Current Meds</NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink href="/discmeds">Discontinued Meds</NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink href="/incidents">Medical Events</NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <Button onClick={() => this.props.clickLogout()}>Logout</Button>
+                    </NavItem>
+                </Nav>
+                )
+        // } else {
+        //         <Nav className="ml-auto" navbar>     
+        //         </Nav>
+        }
+    }
+
     render() {
         return (
-              <div>
+            <div>
                 <Navbar color="light" light expand="md">
                     <NavbarBrand href="/">Health Tracker</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
-                        <Nav className="ml-auto" navbar>
-                            <NavItem>
-                                <NavLink href="/">Current Meds</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink href="/discmeds">Discontinued Meds</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink href="/incidents">Medical Events</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <Button onClick={() => this.props.clickLogout()}>Logout</Button>
-                            </NavItem>
-                        </Nav>
+                            {this.protectedNavViews()}
                     </Collapse>
                 </Navbar>
             </div>
-      )
+        )
     }
-  }
+}
 
 
 export default SiteBar;
+
+

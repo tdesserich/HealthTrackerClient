@@ -9,10 +9,10 @@
     "react-dom": "^16.3.1",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
+    "react-validation": "^3.0.7",
     "reactstrap": "^5.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
