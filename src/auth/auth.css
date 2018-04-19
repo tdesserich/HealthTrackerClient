@@ -1,3 +1,7 @@
+body {
+    background-color: lawngreen;
+}
+
 .auth-container { 
     margin-top: 5em;
     padding: 2em;
