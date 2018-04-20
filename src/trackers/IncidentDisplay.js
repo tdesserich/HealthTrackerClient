@@ -3,8 +3,9 @@ import { Table, Button } from 'reactstrap';
 
 const IncidentDisplay = (props) => {
     return (
-        <div>
-            <h3>Surgeries, Hospitalizations, or Events</h3>
+        <div className="display">
+        <h3 style={{borderBottom: "1px solid gray"}}>Surgeries, Hospitalizations, or Events</h3>
+        <br/>
             <Table striped>
                 <thead>
                     <tr>

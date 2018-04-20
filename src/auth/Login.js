@@ -76,7 +76,7 @@ class Login extends Component {
                     </FormGroup>
                     <FormGroup>
                         <Label for="password">Password</Label>
-                        <Input type="text" name="password" value={this.state.password} invalid={!this.state.passwordValid} placeholder="Password" onChange={this.handleChange} required />
+                        <Input type="password" name="password" value={this.state.password} invalid={!this.state.passwordValid} placeholder="Password" onChange={this.handleChange} required />
                         <FormFeedback>Password must be 6 or more characters</FormFeedback>
                     </FormGroup>
                     <Button type="submit"> Submit </Button>

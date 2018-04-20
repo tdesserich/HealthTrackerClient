@@ -46,9 +46,9 @@ class CurrentMedsCreate extends Component {
     
     render() {
         return (
-            <div>
-            <h3>Log a Current Medication</h3>
-            <hr />
+            <div className="log"> 
+            <h4 style={{borderBottom: "1px solid grey"}}>Log a Current Medication</h4>
+            
             <Form onSubmit={this.handleSubmit} >
                 <FormGroup>
                     <Label for="medicationName">Medication name</Label>
@@ -70,7 +70,7 @@ class CurrentMedsCreate extends Component {
                     <Label for="startDate">Medication start date</Label>
                     <Input id="startDate" type="text" name="startDate" value={this.state.startDate} placeholder="Enter medication start date" onChange={this.handleChange} />
                 </FormGroup>
-                <Button type="submit" color="primary"> Submit </Button>
+                <Button type="submit" color="secondary"> Submit </Button>
             </Form>
         </div>
         )

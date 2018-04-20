@@ -3,7 +3,7 @@ import { Container, Row, Col, UncontrolledCarousel } from 'reactstrap';
 import Signup from './Signup';
 import Login from './Login';
 import OpeningCarousel from '../site/Carousel'
-import './auth.css'
+// import '../App.css'
 
 
 const Auth = (props) => {

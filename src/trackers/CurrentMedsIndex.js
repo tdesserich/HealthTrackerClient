@@ -74,9 +74,11 @@ class CurrentMedsIndex extends Component {
     render() {
         const currentMeds = this.state.currentMeds.length >= 1 ?
             <CurrentMedsDisplay currentMeds={this.state.currentMeds}
-                delete={this.currentMedsDelete} update={this.setUpdatedMeds} /> : <h2>Log a medication to see results</h2>
+                delete={this.currentMedsDelete} update={this.setUpdatedMeds} /> : 
+                <h2 style={{borderBottom: "1px solid grey"}}>Log a current medication to see results</h2>
         return (
-            <Container>
+            
+            <Container className="results">
                 <Row>
                     <Col md="3">
                         <CurrentMedsCreate token={this.props.token} updateCurrentMedsArray={this.fetchCurrentMeds} />
@@ -93,6 +95,7 @@ class CurrentMedsIndex extends Component {
                 </Col>
 
             </Container>
+            
         )
     }
 }

@@ -48,9 +48,9 @@ class DiscMedsCreate extends Component {
     
     render() {
         return (
-            <div>
-            <h3>Log a Discontinued Medication</h3>
-            <hr />
+            <div className="log"> 
+            <h4 style={{borderBottom: "1px solid grey"}}>Log a Discontinued Medication</h4>
+
             <Form onSubmit={this.handleSubmit} >
                 <FormGroup>
                     <Label for="medicationName">Medication name</Label>
@@ -76,7 +76,7 @@ class DiscMedsCreate extends Component {
                     <Label for="endDate">Medication end date</Label>
                     <Input id="endDate" type="text" name="endDate" value={this.state.startDate} placeholder="Enter medication end date" onChange={this.handleChange} />
                 </FormGroup>
-                <Button type="submit" color="primary"> Submit </Button>
+                <Button type="submit" color="secondary"> Submit </Button>
             </Form>
         </div>
         )

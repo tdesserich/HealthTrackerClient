@@ -42,9 +42,8 @@ class IncidentCreate extends Component {
     
     render() {
         return (
-            <div>
-            <h3>Log a Medical Incident</h3>
-            <hr />
+            <div className="log"> 
+            <h4 style={{borderBottom: "1px solid grey"}}>Log a Medical Event</h4>
             <Form onSubmit={this.handleSubmit} >
                 <FormGroup>
                     <Label for="event">Event name</Label>
@@ -58,7 +57,7 @@ class IncidentCreate extends Component {
                     <Label for="description">Description or notes</Label>
                     <Input id="description" type="text" name="description" value={this.state.description} placeholder="Description of event" onChange={this.handleChange} />
                 </FormGroup> 
-                <Button type="submit" color="primary"> Submit </Button>
+                <Button type="submit" color="secondary"> Submit </Button>
             </Form>
         </div>
         )

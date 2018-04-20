@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Navbar, NavbarBrand, NavItem, Button, Collapse, Nav, NavLink, NavbarToggler } from 'reactstrap';
-import './site.css'
+import '../App.css'
 
 class SiteBar extends Component {
     constructor(props) {
@@ -16,19 +16,14 @@ class SiteBar extends Component {
         });
     }
 
-
-
-
     render() {
         return (
             <div>
-                <Navbar color="light" light expand="md">
-                    <NavbarBrand href="/">reactstrap</NavbarBrand>
+                <Navbar className="navbar" light expand="md">
+                    <NavbarBrand className="navbarBrand" href="/">Health Tracker</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
-
-
-                        {this.props.token === localStorage.getItem('token') ?
+                    {this.props.token === localStorage.getItem('token') ?
                             <Nav className="ml-auto" navbar>
                                 <NavItem>
                                     <NavLink href="/">Current Meds</NavLink>
@@ -43,39 +38,14 @@ class SiteBar extends Component {
                                     <Button onClick={() => this.props.clickLogout()}>Logout</Button>
                                 </NavItem>
                             </Nav>
-
-
-
                             : ''
-
-
                         }
-
-
                     </Collapse>
                 </Navbar>
             </div>
-
         )
     }
 }
 
 
 export default SiteBar;
-
-
-// <div>
-            //     <Navbar color="light" light expand="md">
-            //         <NavbarBrand href="/" className="navbarBrand">Health Tracker</NavbarBrand>
-            //         {/* <NavbarToggler onClick={this.toggle} />
-            //         <Collapse isOpen={this.state.isOpen} navbar> */}
-            //             <Nav className="ml-auto" navbar>
-            //                 {this.protectedNavViews()}
-            //                 <NavItem>
-            //                     <NavLink href="/">Current Meds</NavLink>
-            //                 </NavItem>
-            //             </Nav>
-            //         {/* </Collapse> */}
-            //     </Navbar>
-
-            // </div>
