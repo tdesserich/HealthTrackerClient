@@ -52,15 +52,15 @@ class CurrentMedsCreate extends Component {
             <Form onSubmit={this.handleSubmit} >
                 <FormGroup>
                     <Label for="medicationName">Medication name</Label>
-                    <Input id="medicationName" type="text" name="medicationName" value={this.state.medicationName} placeholder="Enter medication name" onChange={this.handleChange} />
+                    <Input id="medicationName" type="text" name="medicationName" value={this.state.medicationName} onChange={this.handleChange} placeholder="Enter medication name"/>
                 </FormGroup>
                 <FormGroup>
                     <Label for="reason">Reason for taking</Label>
-                    <Input type="reason" name="reason" id="reason" value={this.state.reason} onChange={this.handleChange} placeholder="Ex: Allergies, Acid reflux, Vitamin" />
+                    <Input id="reason" type="reason" name="reason" value={this.state.reason} onChange={this.handleChange} placeholder="Ex: Allergies, Acid reflux, Vitamin" />
                 </FormGroup>
                 <FormGroup>
                     <Label for="dosage">Dosage</Label>
-                    <Input id="dosage" type="text" name="dosage" value={this.state.dosage} placeholder="Ex: 10mg" onChange={this.handleChange} />
+                    <Input id="dosage" type="text" name="dosage" value={this.state.dosage} onChange={this.handleChange} placeholder="Ex: 10mg"/>
                 </FormGroup>
                 <FormGroup>
                     <Label for="frequency">Medication frequency</Label>
@@ -70,7 +70,7 @@ class CurrentMedsCreate extends Component {
                     <Label for="startDate">Medication start date</Label>
                     <Input id="startDate" type="text" name="startDate" value={this.state.startDate} placeholder="Enter medication start date" onChange={this.handleChange} />
                 </FormGroup>
-                <Button type="submit" color="secondary"> Submit </Button>
+                <Button type="submit" color="secondary" style={{height: "40px", width: "80px"}}> Submit </Button>
             </Form>
         </div>
         )

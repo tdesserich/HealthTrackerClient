@@ -78,7 +78,7 @@ class CurrentMedsIndex extends Component {
                 <h2 style={{borderBottom: "1px solid grey"}}>Log a current medication to see results</h2>
         return (
             
-            <Container className="results">
+            <Container className="display">
                 <Row>
                     <Col md="3">
                         <CurrentMedsCreate token={this.props.token} updateCurrentMedsArray={this.fetchCurrentMeds} />

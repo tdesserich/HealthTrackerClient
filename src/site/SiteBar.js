@@ -35,7 +35,7 @@ class SiteBar extends Component {
                                     <NavLink href="/incidents">Medical Events</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <Button onClick={() => this.props.clickLogout()}>Logout</Button>
+                                    <Button onClick={() => this.props.clickLogout()} color="secondary" style={{height: "40px", width: "80px"}}>Logout</Button>
                                 </NavItem>
                             </Nav>
                             : ''

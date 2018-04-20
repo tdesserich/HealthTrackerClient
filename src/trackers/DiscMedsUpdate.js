@@ -64,7 +64,7 @@ class DiscMedsUpdate extends Component {
                                 <Label for="endDate">Medication start date</Label>
                                 <Input id="endDate" type="text" name="endDate" value={this.state.startDate} placeholder="Enter medication end date" onChange={this.handleChange} />
                             </FormGroup>
-                            <Button type="submit" color="primary"> Submit </Button>
+                            <Button type="submit" color="secondary" style={{margin: "0px 10px 10px 10px", height: "40px", width: "80px"}}> Submit </Button>
                         </Form>
                     </ModalBody>    
             </Modal>

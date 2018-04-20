@@ -12,7 +12,7 @@ class CurrentMedsUpdate extends Component {
             reason: '',
             dosage: '',
             frequency: '',
-            startDate: ''
+            startDate: '',
         };
     }
 
@@ -22,6 +22,7 @@ class CurrentMedsUpdate extends Component {
             medicationName: this.props.currentMeds.medicationName,
             reason: this.props.currentMeds.reason,
             dosage: this.props.currentMeds.dosage,
+            frequency: this.props.currentMeds.frequency,
             startDate: this.props.currentMeds.startDate
         })
     }
@@ -57,14 +58,14 @@ class CurrentMedsUpdate extends Component {
                                 <Input id="dosage" type="text" name="dosage" value={this.state.dosage} placeholder="Ex: 10mg" onChange={this.handleChange} />
                             </FormGroup>
                             <FormGroup>
-                                <Label for="frequency">Medication frequency</Label>
+                                <Label for="frequency">Frequency</Label>
                                 <Input id="frequency" type="text" name="frequency" value={this.state.frequency} placeholder="Ex: Once a day, At bedtime" onChange={this.handleChange} />
                             </FormGroup>
                             <FormGroup>
-                                <Label for="startDate">Medication start date</Label>
+                                <Label for="startDate">Start date</Label>
                                 <Input id="startDate" type="text" name="startDate" value={this.state.startDate} placeholder="Enter medication start date" onChange={this.handleChange} />
                             </FormGroup>
-                            <Button type="submit" color="primary"> Submit </Button>
+                            <Button type="submit" color="secondary" style={{margin: "0px 10px 10px 10px", height: "40px", width: "80px"}}> Submit </Button>
                         </Form>
                     </ModalBody>    
             </Modal>

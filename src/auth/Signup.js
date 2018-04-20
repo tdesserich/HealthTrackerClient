@@ -77,7 +77,7 @@ class Signup extends Component {
                         <Input type="password" name="password" value={this.state.password} invalid={!this.state.passwordValid} placeholder="Enter password - at least 6 characters" onChange={this.handleChange} required />
                         <FormFeedback>Enter a password - at least 6 characters</FormFeedback>
                     </FormGroup>
-                    <Button type="submit">Submit</Button>
+                    <Button type="submit" color="secondary" style={{height: "40px", width: "80px"}}>Submit</Button>
                 </Form>
             </div>
         )

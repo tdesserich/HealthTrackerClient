@@ -57,7 +57,7 @@ class IncidentCreate extends Component {
                     <Label for="description">Description or notes</Label>
                     <Input id="description" type="text" name="description" value={this.state.description} placeholder="Description of event" onChange={this.handleChange} />
                 </FormGroup> 
-                <Button type="submit" color="secondary"> Submit </Button>
+                <Button type="submit" color="secondary" style={{height: "40px", width: "80px"}}> Submit </Button>
             </Form>
         </div>
         )

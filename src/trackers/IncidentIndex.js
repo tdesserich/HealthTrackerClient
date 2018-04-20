@@ -74,7 +74,7 @@ class IncidentIndex extends Component {
             <IncidentDisplay incidentIndex={this.state.incident} delete={this.incidentDelete} update={this.setUpdatedIncident} /> 
             : <h2 style={{borderBottom: "1px solid grey"}}>Log a medical event to see results</h2>
         return (
-            <Container className="results">
+            <Container className="display">
                 <Row>
                     <Col md="3">
                         <IncidentCreate token={this.props.token} updateIncidentArray={this.fetchIncident} />

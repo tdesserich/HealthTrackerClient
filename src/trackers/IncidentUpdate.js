@@ -53,7 +53,7 @@ class IncidentUpdate extends Component {
                                 <Label for="description">Description</Label>
                                 <Input id="description" type="text" name="description" value={this.state.description} placeholder="Description" onChange={this.handleChange} />
                             </FormGroup>
-                            <Button type="submit" color="primary"> Submit </Button>
+                            <Button type="submit" color="secondary" style={{margin: "0px 10px 10px 10px", height: "40px", width: "80px"}}> Submit </Button>
                         </Form>
                     </ModalBody>    
             </Modal>

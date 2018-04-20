@@ -57,8 +57,8 @@ class DiscMedsCreate extends Component {
                     <Input id="medicationName" type="text" name="medicationName" value={this.state.medicationName} placeholder="Enter medication name" onChange={this.handleChange} />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="reason">Reason for discontinuing</Label>
-                    <Input type="reason" name="reason" id="reason" value={this.state.reason} onChange={this.handleChange} placeholder="Ex: Allergies, Acid reflux, Vitamin" />
+                    <Label for="reason">Adverse reaction to medication</Label>
+                    <Input type="text" name="reason" id="reason" value={this.state.reason} onChange={this.handleChange} placeholder="Ex: Allergies, Acid reflux, Vitamin" />
                 </FormGroup>
                 <FormGroup>
                     <Label for="reaction">Adverse reaction to medication</Label>
@@ -76,7 +76,7 @@ class DiscMedsCreate extends Component {
                     <Label for="endDate">Medication end date</Label>
                     <Input id="endDate" type="text" name="endDate" value={this.state.startDate} placeholder="Enter medication end date" onChange={this.handleChange} />
                 </FormGroup>
-                <Button type="submit" color="secondary"> Submit </Button>
+                <Button type="submit" color="secondary" style={{height: "40px", width: "80px"}}> Submit </Button>
             </Form>
         </div>
         )

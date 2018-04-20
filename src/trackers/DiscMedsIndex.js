@@ -73,7 +73,7 @@ class DiscMedsIndex extends Component {
             <DiscMedsDisplay discMeds={this.state.discMeds}
                 delete={this.discMedsDelete} update={this.setUpdatedMeds} /> : <h2 style={{borderBottom: "1px solid grey"}}>Log a discontinued medication to see results</h2>
         return (
-            <Container className="results">
+            <Container className="display">
                 <Row>
                     <Col md="3">
                         <DiscMedsCreate token={this.props.token} updateDiscMedsArray={this.fetchDiscMeds} />
