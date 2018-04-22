@@ -26,7 +26,8 @@ class DiscMedsUpdate extends Component {
             medicationName: this.props.discMeds.medicationName,
             reason: this.props.discMeds.reason,
             dosage: this.props.discMeds.dosage,
-            endDate: this.props.discMeds.startDate,
+            frequency: this.props.discMeds.frequency,
+            endDate: this.props.discMeds.endDate,
             datePickerEndDate: moment(this.props.discMeds.endDate, 'L')
         })
     }

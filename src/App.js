@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Auth from './auth/Auth';
 import SiteBar from './site/SiteBar';
+import Footer from './site/Footer';
 import CurrentMedsIndex from './trackers/CurrentMedsIndex';
 import DiscMedsIndex from './trackers/DiscMedsIndex';
 import IncidentIndex from './trackers/IncidentIndex';
@@ -68,6 +69,7 @@ class App extends Component {
             {this.protectedViews()}
            </div>
         </Router>
+        <Footer className="footerStyle"/>
       </div>
     );
   }

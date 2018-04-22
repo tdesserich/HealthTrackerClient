@@ -26,15 +26,13 @@ class CurrentMedsCreate extends Component {
     }            
     
     handleDateChange = (date) => {
-        
         this.setState({
           startDate: date.format('L'),
           datePickerStartDate: date
         });
       }
 
-    
-    handleSubmit = (event) => {
+     handleSubmit = (event) => {
         event.preventDefault();
         fetch('http://localhost:3000/currentmeds/', {
             method: 'POST',
@@ -64,7 +62,6 @@ class CurrentMedsCreate extends Component {
             <div className="log"> 
             <br/>
             <h4 style={{borderBottom: "1px solid grey"}}>Log a Current Medication</h4>
-            
             <Form onSubmit={this.handleSubmit} >
                 <FormGroup>
                     <Label for="medicationName">Medication name</Label>
@@ -89,7 +86,7 @@ class CurrentMedsCreate extends Component {
                         onChange={this.handleDateChange}
                         selected={this.state.datePickerStartDate}
                         readOnly
-                    />
+                    />     
                 </FormGroup>
                 <Button type="submit" color="secondary" style={{height: "40px", width: "80px"}}> Submit </Button>
             </Form>
@@ -97,6 +94,5 @@ class CurrentMedsCreate extends Component {
         )
     }
 }
-
 
 export default CurrentMedsCreate;

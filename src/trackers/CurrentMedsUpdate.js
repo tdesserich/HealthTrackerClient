@@ -5,10 +5,8 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { Form, FormGroup, Label, Button, Input, Modal, ModalHeader, ModalBody } from 'reactstrap';
 
 class CurrentMedsUpdate extends Component {
-
     constructor(props) {
         super(props)
-
         this.state = {
             id: '',  
             medicationName: '',

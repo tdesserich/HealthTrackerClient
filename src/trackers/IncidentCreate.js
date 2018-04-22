@@ -48,7 +48,7 @@ class IncidentCreate extends Component {
                 id:'',
                 event: '',
                 date: '',
-                datePickerStartDate: moment(),
+                datePickerDate: moment(),
                 description: ''
             })
         })
