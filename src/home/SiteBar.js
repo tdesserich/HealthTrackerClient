@@ -1,13 +1,5 @@
 import React, { Component } from 'react';
-import {
-    Navbar,
-    NavbarBrand,
-    NavItem,
-    Button,
-    NavbarToggler,
-    Collapse,
-    Nav
-} from 'reactstrap';
+import { Navbar, NavbarBrand, NavItem, Button, NavbarToggler, Collapse, Nav} from 'reactstrap';
 
 class SiteBar extends Component {
     constructor(props) {
@@ -33,7 +25,7 @@ class SiteBar extends Component {
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
                             <NavItem>
-                                <Button onClick={() => this.props.clickLogout()}>Logout</Button>
+                                <Button onClick={() => this.props.clickLogout()} className="buttonStyle">Logout</Button>
                             </NavItem>
                         </Nav>
                     </Collapse>

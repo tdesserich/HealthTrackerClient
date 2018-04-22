@@ -1,9 +1,9 @@
 import React from 'react';
-import { Container, Row, Col, UncontrolledCarousel } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 import Signup from './Signup';
 import Login from './Login';
 import OpeningCarousel from '../site/Carousel'
-// import '../App.css'
+
 
 
 const Auth = (props) => {
@@ -26,6 +26,8 @@ const Auth = (props) => {
                     </Col>
                 </Row>  
             </Container>
+            <br/>
+            <br/>
         </div>
     )
 }

@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
+import 'react-datepicker/dist/react-datepicker.css';
 import { Form, FormGroup, Label, Input, Button, Modal, ModalHeader, ModalBody } from 'reactstrap';
 
 class IncidentUpdate extends Component {
@@ -10,6 +13,7 @@ class IncidentUpdate extends Component {
             id: '',  
             event: '',
             date: '',
+            datePickerDate: moment(),
             description: ''
         };
     }
@@ -19,6 +23,7 @@ class IncidentUpdate extends Component {
             id: this.props.incident.id, // Mod 7, Step 4
             event: this.props.incident.event,
             date: this.props.incident.date,
+            datePickerDate: moment(this.props.incident.date, 'L'),
             description: this.props.incident.description
         })
     }
@@ -29,6 +34,15 @@ class IncidentUpdate extends Component {
         })
     }
 
+    handleDateChange = (date) => {
+        
+        this.setState({
+          startDate: date.format('L'),
+          datePickerDate: date
+        });
+      }
+    
+    
     handleSubmit = (event) => {
         event.preventDefault();
         this.props.update(event, this.state)
@@ -47,13 +61,18 @@ class IncidentUpdate extends Component {
                             </FormGroup>
                             <FormGroup>
                                 <Label for="date">Date</Label>
-                                <Input type="text" name="date" id="date" value={this.state.date} onChange={this.handleChange} placeholder="Date" />
+                                <DatePicker
+                                customInput={<Input />}
+                                onChange={this.handleDateChange}
+                                selected={this.state.datePickerDate}
+                                readOnly
+                            />           
                             </FormGroup>
                             <FormGroup>
                                 <Label for="description">Description</Label>
                                 <Input id="description" type="text" name="description" value={this.state.description} placeholder="Description" onChange={this.handleChange} />
                             </FormGroup>
-                            <Button type="submit" color="secondary" style={{margin: "0px 10px 10px 10px", height: "40px", width: "80px"}}> Submit </Button>
+                            <Button type="submit" color="secondary" style={{height: "40px", width: "80px"}}> Submit </Button>
                         </Form>
                     </ModalBody>    
             </Modal>

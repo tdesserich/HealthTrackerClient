@@ -3,14 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "add": "^2.0.6",
     "bootstrap": "^4.1.0",
+    "moment": "^2.22.1",
     "node-sass-chokidar": "^1.2.2",
+    "or": "^0.2.0",
     "react": "^16.3.1",
+    "react-calendar": "^2.14.0",
+    "react-date-picker": "^6.10.1",
+    "react-datepicker": "^1.4.1",
     "react-dom": "^16.3.1",
+    "react-moment": "^0.7.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
     "react-validation": "^3.0.7",
-    "reactstrap": "^5.0.0"
+    "reactstrap": "^5.0.0",
+    "yarn": "^1.6.0"
   },
   "scripts": {
     "start": "react-scripts start",

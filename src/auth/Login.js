@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, FormGroup, Label, Input, Button, FormFeedback, UncontrolledCarousel } from 'reactstrap';  
+import { Form, FormGroup, Label, Input, Button, FormFeedback } from 'reactstrap';  
   
 
 class Login extends Component {
@@ -44,8 +44,6 @@ class Login extends Component {
             passwordValid: passwordValid
         });
     }
-
-
 
     handleSubmit = (event) => {
         if (this.state.usernameValid && this.state.passwordValid) {

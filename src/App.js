@@ -1,18 +1,11 @@
 import React, { Component } from 'react';
-// import 'bootstrap/dist/css/bootstrap.css';
-import './App.css';
 import Auth from './auth/Auth';
 import SiteBar from './site/SiteBar';
-// import Splash from './site/Splash';
 import CurrentMedsIndex from './trackers/CurrentMedsIndex';
 import DiscMedsIndex from './trackers/DiscMedsIndex';
 import IncidentIndex from './trackers/IncidentIndex';
-
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch
-} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import './App.css';
 
 
 class App extends Component {
@@ -60,20 +53,22 @@ class App extends Component {
     } else {
       return (
         <Route path="/auth" >
-          <Auth setToken={this.setSessionState}/>
+          <Auth setToken={this.setSessionState} />
         </Route>
       )
     }
   }
-  
+
   render() {
     return (
-      <Router>
-        <div className="appDiv">
-          <SiteBar token={this.state.sessionToken} clickLogout={this.logout} />
-          {this.protectedViews()}
-        </div>
-      </Router>
+      <div className="outerContainer">
+        <Router>
+          <div className="appDiv">
+            <SiteBar token={this.state.sessionToken} clickLogout={this.logout} />
+            {this.protectedViews()}
+           </div>
+        </Router>
+      </div>
     );
   }
 }

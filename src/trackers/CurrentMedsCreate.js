@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
+import 'react-datepicker/dist/react-datepicker.css';
 import { FormGroup, Form, Label, Input, Button } from 'reactstrap';
 
 class CurrentMedsCreate extends Component {
@@ -10,8 +13,10 @@ class CurrentMedsCreate extends Component {
             reason: '',
             dosage: '',
             frequency: '',
-            startDate: ''
+            startDate: '',
+            datePickerStartDate: moment()
         };
+        
     }
 
     handleChange = (event) => {
@@ -19,6 +24,15 @@ class CurrentMedsCreate extends Component {
             [event.target.name]: event.target.value
         });
     }            
+    
+    handleDateChange = (date) => {
+        
+        this.setState({
+          startDate: date.format('L'),
+          datePickerStartDate: date
+        });
+      }
+
     
     handleSubmit = (event) => {
         event.preventDefault();
@@ -39,7 +53,8 @@ class CurrentMedsCreate extends Component {
                 reason: '',
                 dosage: '',
                 frequency: '',
-                startDate: ''
+                startDate: '',
+                datePickerStartDate: moment()
             })
         })
     }
@@ -47,6 +62,7 @@ class CurrentMedsCreate extends Component {
     render() {
         return (
             <div className="log"> 
+            <br/>
             <h4 style={{borderBottom: "1px solid grey"}}>Log a Current Medication</h4>
             
             <Form onSubmit={this.handleSubmit} >
@@ -68,7 +84,12 @@ class CurrentMedsCreate extends Component {
                 </FormGroup>
                 <FormGroup>
                     <Label for="startDate">Medication start date</Label>
-                    <Input id="startDate" type="text" name="startDate" value={this.state.startDate} placeholder="Enter medication start date" onChange={this.handleChange} />
+                    <DatePicker
+                        customInput={<Input />}
+                        onChange={this.handleDateChange}
+                        selected={this.state.datePickerStartDate}
+                        readOnly
+                    />
                 </FormGroup>
                 <Button type="submit" color="secondary" style={{height: "40px", width: "80px"}}> Submit </Button>
             </Form>
@@ -76,5 +97,6 @@ class CurrentMedsCreate extends Component {
         )
     }
 }
+
 
 export default CurrentMedsCreate;

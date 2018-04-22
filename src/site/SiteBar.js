@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Navbar, NavbarBrand, NavItem, Button, Collapse, Nav, NavLink, NavbarToggler } from 'reactstrap';
-import '../App.css'
 
 class SiteBar extends Component {
     constructor(props) {
@@ -19,8 +18,8 @@ class SiteBar extends Component {
     render() {
         return (
             <div>
-                <Navbar className="navbar" light expand="md">
-                    <NavbarBrand className="navbarBrand" href="/">Health Tracker</NavbarBrand>
+                <Navbar className="navbarStyle" light expand="md">
+                    <NavbarBrand href="/">Medical Tracker</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                     {this.props.token === localStorage.getItem('token') ?
@@ -35,7 +34,7 @@ class SiteBar extends Component {
                                     <NavLink href="/incidents">Medical Events</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <Button onClick={() => this.props.clickLogout()} color="secondary" style={{height: "40px", width: "80px"}}>Logout</Button>
+                                    <Button onClick={() => this.props.clickLogout()} className="buttonStyle">Logout</Button>
                                 </NavItem>
                             </Nav>
                             : ''

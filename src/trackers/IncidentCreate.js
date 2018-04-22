@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
+import 'react-datepicker/dist/react-datepicker.css';
 import { Form, FormGroup, Button, Label, Input } from 'reactstrap';
 
 class IncidentCreate extends Component {
@@ -8,6 +11,7 @@ class IncidentCreate extends Component {
             id:'',
             event: '',
             date: '',
+            datePickerDate: moment(),
             description: ''
         };
     }
@@ -17,6 +21,15 @@ class IncidentCreate extends Component {
             [event.target.name]: event.target.value
         });
     }            
+    
+    handleDateChange = (date) => {
+        
+        this.setState({
+          startDate: date.format('L'),
+          datePickerDate: date
+        });
+      }
+    
     
     handleSubmit = (event) => {
         event.preventDefault();
@@ -35,6 +48,7 @@ class IncidentCreate extends Component {
                 id:'',
                 event: '',
                 date: '',
+                datePickerStartDate: moment(),
                 description: ''
             })
         })
@@ -43,6 +57,7 @@ class IncidentCreate extends Component {
     render() {
         return (
             <div className="log"> 
+            <br/>
             <h4 style={{borderBottom: "1px solid grey"}}>Log a Medical Event</h4>
             <Form onSubmit={this.handleSubmit} >
                 <FormGroup>
@@ -50,13 +65,18 @@ class IncidentCreate extends Component {
                     <Input id="event" type="text" name="event" value={this.state.event} placeholder="Ex: Surgery, Seizure, Illness" onChange={this.handleChange} />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="date">Date</Label>
-                    <Input type="text" name="date" id="date" value={this.state.date} onChange={this.handleChange} placeholder="Date" />
-                </FormGroup>
-                <FormGroup>
                     <Label for="description">Description or notes</Label>
                     <Input id="description" type="text" name="description" value={this.state.description} placeholder="Description of event" onChange={this.handleChange} />
                 </FormGroup> 
+                <FormGroup>
+                    <Label for="date">Date</Label>
+                    <DatePicker
+                        customInput={<Input />}
+                        onChange={this.handleDateChange}
+                        selected={this.state.datePickerDate}
+                        readOnly
+                    />
+                </FormGroup>
                 <Button type="submit" color="secondary" style={{height: "40px", width: "80px"}}> Submit </Button>
             </Form>
         </div>

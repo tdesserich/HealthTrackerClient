@@ -1,20 +1,27 @@
 .background {
-  background-color:lightskyblue;
+  background-color: #75A9D4;
 }
 
-.auth-container { 
-  padding: 2em;
+.outerContainer {
+  min-height: 100%;
+  position: relative;
+  padding-bottom: 200px
 }
 
-.cardDeck {
-  border-left: 1px solid gray;
+.buttonStyle {
+  background-color: grey;
+  margin: 0px 10px 10px 10px;
+  height: 40px;
+  width: 80px;
 }
 
-.card {
+.cardStyle {
   margin-top: 1em;
-  border: 1px solid #e5e5e5;
+  margin-bottom: 1em;
+  border: 1px solid grey;
   border-radius: 0.4em;
-  box-shadow: 2px 4px 20px #f0f0f0;
+  box-shadow: 2px 4px 8px #f0f0f0;
+  text-align: center;
 }
 
 .carousel { 
@@ -32,23 +39,30 @@
   max-width: 720px;
 }
 
-.navbar {
-  /* background-color: skyblue; */
-  box-shadow: 2px 4px 20px #f0f0f0;
-  color: black;
-}
-
-.navbarBrand {
-  color: black;
+.navbarStyle {
+  background-color: #4C8ABD;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 20px;
 }
 
 .display {
   margin-top: 2em;
-  margin-bottom: 3em;
 }
 
 .log {
   margin-top: 5em;
+}
+
+.incidentTable {
+  background-color: white; 
+}
+
+.footerStyle {
+  padding: 30px;
+  background-color: #4C8ABD;
+  border-top: 1px solid #f0f0f0;
+  text-align: center;
+  width: 100%;
 }
 
 @media(max-width: 375px) {
@@ -66,6 +80,7 @@
   .auth-container{margin-top: 1em}
   .log{margin-top: 0em}
   .results{margin-top: 3em}
+  .incidentTable{max-width: 400px}
 }
 
 @media(max-width: 768px) {

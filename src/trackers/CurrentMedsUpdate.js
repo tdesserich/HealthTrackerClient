@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
+import 'react-datepicker/dist/react-datepicker.css';
 import { Form, FormGroup, Label, Button, Input, Modal, ModalHeader, ModalBody } from 'reactstrap';
 
 class CurrentMedsUpdate extends Component {
@@ -13,6 +16,7 @@ class CurrentMedsUpdate extends Component {
             dosage: '',
             frequency: '',
             startDate: '',
+            datePickerStartDate: moment()
         };
     }
 
@@ -23,7 +27,8 @@ class CurrentMedsUpdate extends Component {
             reason: this.props.currentMeds.reason,
             dosage: this.props.currentMeds.dosage,
             frequency: this.props.currentMeds.frequency,
-            startDate: this.props.currentMeds.startDate
+            startDate: this.props.currentMeds.startDate,
+            datePickerStartDate: moment(this.props.currentMeds.startDate, 'L')
         })
     }
 
@@ -32,6 +37,14 @@ class CurrentMedsUpdate extends Component {
             [event.target.name]: event.target.value
         })
     }
+
+    handleDateChange = (date) => {
+        
+        this.setState({
+          startDate: date.format('L'),
+          datePickerStartDate: date
+        });
+      }
 
     handleSubmit = (event) => {
         event.preventDefault();
@@ -63,9 +76,14 @@ class CurrentMedsUpdate extends Component {
                             </FormGroup>
                             <FormGroup>
                                 <Label for="startDate">Start date</Label>
-                                <Input id="startDate" type="text" name="startDate" value={this.state.startDate} placeholder="Enter medication start date" onChange={this.handleChange} />
+                                <DatePicker
+                                customInput={<Input />}
+                                onChange={this.handleDateChange}
+                                selected={this.state.datePickerStartDate}
+                                readOnly
+                            />                            
                             </FormGroup>
-                            <Button type="submit" color="secondary" style={{margin: "0px 10px 10px 10px", height: "40px", width: "80px"}}> Submit </Button>
+                            <Button type="submit" color="secondary" style={{height: "40px", width: "80px"}}> Submit </Button>
                         </Form>
                     </ModalBody>    
             </Modal>

@@ -3,7 +3,6 @@ import { UncontrolledCarousel, Container, Col } from 'reactstrap';
 import Two from '../assets/two.jpg'
 import One from '../assets/one.jpg'
 import Three from '../assets/three.jpg'
-import '../App.css'
 
 
 const items = [

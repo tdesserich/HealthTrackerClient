@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
+import 'react-datepicker/dist/react-datepicker.css';
 import { FormGroup, Form, Label, Input, Button } from 'reactstrap';
 
 class DiscMedsCreate extends Component {
@@ -11,7 +14,8 @@ class DiscMedsCreate extends Component {
             reaction: '',
             dosage: '',
             frequency: '',
-            endDate: ''
+            endDate: '',
+            datePickerEndDate: moment()        
         };
     }
 
@@ -20,6 +24,14 @@ class DiscMedsCreate extends Component {
             [event.target.name]: event.target.value
         });
     }            
+    
+    handleDateChange = (date) => {
+        
+        this.setState({
+          endDate: date.format('L'),
+          datePickerEndDate: date
+        });
+      }
     
     handleSubmit = (event) => {
         event.preventDefault();
@@ -41,7 +53,8 @@ class DiscMedsCreate extends Component {
                 reaction: '',
                 dosage: '',
                 frequency: '',
-                endDate: ''
+                endDate: '',
+                datePickerEndDate: moment()
             })
         })
     }
@@ -49,6 +62,7 @@ class DiscMedsCreate extends Component {
     render() {
         return (
             <div className="log"> 
+            <br/>
             <h4 style={{borderBottom: "1px solid grey"}}>Log a Discontinued Medication</h4>
 
             <Form onSubmit={this.handleSubmit} >
@@ -57,7 +71,7 @@ class DiscMedsCreate extends Component {
                     <Input id="medicationName" type="text" name="medicationName" value={this.state.medicationName} placeholder="Enter medication name" onChange={this.handleChange} />
                 </FormGroup>
                 <FormGroup>
-                    <Label for="reason">Adverse reaction to medication</Label>
+                    <Label for="reason">Reason for taking medication</Label>
                     <Input type="text" name="reason" id="reason" value={this.state.reason} onChange={this.handleChange} placeholder="Ex: Allergies, Acid reflux, Vitamin" />
                 </FormGroup>
                 <FormGroup>
@@ -74,7 +88,12 @@ class DiscMedsCreate extends Component {
                 </FormGroup>
                 <FormGroup>
                     <Label for="endDate">Medication end date</Label>
-                    <Input id="endDate" type="text" name="endDate" value={this.state.startDate} placeholder="Enter medication end date" onChange={this.handleChange} />
+                    <DatePicker
+                        customInput={<Input />}
+                        onChange={this.handleDateChange}
+                        selected={this.state.datePickerEndDate}
+                        readOnly
+                    />               
                 </FormGroup>
                 <Button type="submit" color="secondary" style={{height: "40px", width: "80px"}}> Submit </Button>
             </Form>

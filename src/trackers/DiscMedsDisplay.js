@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Row, Button, CardDeck, Card, CardBody, CardHeader, CardTitle, CardText } from 'reactstrap';
+import { Col, Row, Button, CardDeck, Card, CardBody, CardHeader, CardText } from 'reactstrap';
 
 const DiscMedsDisplay = (props) => {
     return (
@@ -8,11 +8,11 @@ const DiscMedsDisplay = (props) => {
             <CardDeck>
                 {props.discMeds.map((discMeds, id) => {
                     return (
-                        <Col lg="4">
+                        <Col lg="4" key={id}>
                             <Row className="h-100">
-                                <Card className="text-center" key={id}>
+                            <Card className="cardStyle">
                                 <CardHeader style={{ fontWeight: "bold" }}>{discMeds.medicationName}</CardHeader>
-                                    <CardBody className="text-center">
+                                    <CardBody>
                                         <CardText style={{ fontWeight: "bold" }}>Reason for taking:</CardText>
                                         <CardText>{discMeds.reason}</CardText>
                                         <CardText style={{ fontWeight: "bold" }}>Adverse reaction:</CardText>
@@ -23,8 +23,8 @@ const DiscMedsDisplay = (props) => {
                                         <CardText>{discMeds.frequency}</CardText>
                                         <CardText style={{ fontWeight: "bold" }}>End date:</CardText>
                                         <CardText>{discMeds.endDate}</CardText>
-                                        <Button id={discMeds.id} onClick={e => props.update(e, discMeds)} color="secondary" style={{margin: "0px 10px 10px 10px", height: "40px", width: "80px"}}>Update</Button>
-                                        <Button id={discMeds.id} onClick={e => props.delete(e, discMeds)} color="secondary" style={{margin: "0px 10px 10px 10px", height: "40px", width: "80px"}}>Delete</Button>
+                                        <Button id={discMeds.id} onClick={e => props.update(e, discMeds)} className="buttonStyle">Update</Button>
+                                        <Button id={discMeds.id} onClick={e => props.delete(e, discMeds)} className="buttonStyle">Delete</Button>
                                     </CardBody>
                                 </Card>
                             </Row>

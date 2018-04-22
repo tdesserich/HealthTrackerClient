@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
+import 'react-datepicker/dist/react-datepicker.css';
 import { FormGroup, Form, Label, Input, Button, Modal, ModalHeader, ModalBody } from 'reactstrap';
 
 class DiscMedsUpdate extends Component {
@@ -12,7 +15,8 @@ class DiscMedsUpdate extends Component {
             reason: '',
             dosage: '',
             frequency: '',
-            endDate: ''
+            endDate: '',
+            datePickerEndDate: moment()
         };
     }
 
@@ -22,7 +26,8 @@ class DiscMedsUpdate extends Component {
             medicationName: this.props.discMeds.medicationName,
             reason: this.props.discMeds.reason,
             dosage: this.props.discMeds.dosage,
-            endDate: this.props.discMeds.startDate
+            endDate: this.props.discMeds.startDate,
+            datePickerEndDate: moment(this.props.discMeds.endDate, 'L')
         })
     }
 
@@ -32,6 +37,13 @@ class DiscMedsUpdate extends Component {
         })
     }
 
+    handleDateChange = (date) => {
+        
+        this.setState({
+          endDate: date.format('L'),
+          datePickerEndDate: date
+        });
+      }
     handleSubmit = (event) => {
         event.preventDefault();
         this.props.update(event, this.state)
@@ -61,10 +73,15 @@ class DiscMedsUpdate extends Component {
                                 <Input id="frequency" type="text" name="frequency" value={this.state.frequency} placeholder="Ex: Once a day, At bedtime" onChange={this.handleChange} />
                             </FormGroup>
                             <FormGroup>
-                                <Label for="endDate">Medication start date</Label>
-                                <Input id="endDate" type="text" name="endDate" value={this.state.startDate} placeholder="Enter medication end date" onChange={this.handleChange} />
+                                <Label for="endDate">Medication end date</Label>
+                                <DatePicker
+                                customInput={<Input />}
+                                onChange={this.handleDateChange}
+                                selected={this.state.datePickerEndDate}
+                                readOnly
+                            />           
                             </FormGroup>
-                            <Button type="submit" color="secondary" style={{margin: "0px 10px 10px 10px", height: "40px", width: "80px"}}> Submit </Button>
+                            <Button type="submit" color="secondary" style={{height: "40px", width: "80px"}}> Submit </Button>
                         </Form>
                     </ModalBody>    
             </Modal>
