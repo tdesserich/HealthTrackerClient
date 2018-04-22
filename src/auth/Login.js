@@ -20,7 +20,6 @@ class Login extends Component {
             () => {
                 this.validateField(name, value)
             });
-
     }
 
     validateField(fieldName, value) {

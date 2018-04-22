@@ -26,7 +26,6 @@ class OpeningCarousel extends Component {
                 </UncontrolledCarousel>
             </Col>
             </Container>
-
         )
     }
 }

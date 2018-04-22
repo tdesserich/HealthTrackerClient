@@ -1,18 +1,3 @@
-/* * {
-  box-sizing: border-box;
- }
-
- *:before,
- *:after {
-  box-sizing: border-box;
- }
-
- html,
- body {
-  height: 100%;
-  position: relative;
- } */
-
 .background {
   background-color: #75A9D4;
 }
@@ -23,7 +8,6 @@
   display: block;
   position: relative;
   padding-bottom: 100px;
-  
 }
 
 .buttonStyle {
@@ -39,6 +23,7 @@
   border-radius: 0.4em;
   box-shadow: 2px 4px 8px #f0f0f0;
   text-align: center;
+  width: 100%;
 }
 
 .carousel { 
@@ -51,10 +36,10 @@
   max-width: 720px;
 }
 
-.carousel-item {
+/* .carousel-item {
   margin: 0 auto;
   max-width: 720px;
-}
+} */
 
 .navbarStyle {
   background-color: #4C8ABD;
@@ -101,7 +86,6 @@
   .auth-container{margin-top: 1em}
   .log{margin-top: 0em}
   .results{margin-top: 3em}
-  .incidentTable{max-width: 400px}
 }
 
 @media(max-width: 768px) {

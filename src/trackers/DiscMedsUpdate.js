@@ -62,8 +62,12 @@ class DiscMedsUpdate extends Component {
                                 <Input id="medicationName" type="text" name="medicationName" value={this.state.medicationName} placeholder="Enter medication name" onChange={this.handleChange} />
                             </FormGroup>
                             <FormGroup>
-                                <Label for="reason">Reason for discontinuing</Label>
+                                <Label for="reason">Reason for taking medication</Label>
                                 <Input type="text" name="reason" id="reason" value={this.state.reason} onChange={this.handleChange} placeholder="Ex: Allergies, Acid reflux, Vitamin" />
+                            </FormGroup>
+                            <FormGroup>
+                                <Label for="reaction">Adverse reaction</Label>
+                                <Input type="text" name="reaction" id="reaction" value={this.state.reaction} onChange={this.handleChange} placeholder="Ex: Rash, Stomache ache" />
                             </FormGroup>
                             <FormGroup>
                                 <Label for="dosage">Dosage</Label>

@@ -19,7 +19,6 @@ class Signup extends Component {
             () => {
                 this.validateField(name, value)
             });
-
     }
 
     validateField(fieldName, value) {
@@ -59,7 +58,6 @@ class Signup extends Component {
             })
         }
         event.preventDefault()
-
     }
 
     render() {
