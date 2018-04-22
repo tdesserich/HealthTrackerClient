@@ -37,7 +37,7 @@ class IncidentUpdate extends Component {
     handleDateChange = (date) => {
         
         this.setState({
-          startDate: date.format('L'),
+          date: date.format('L'),
           datePickerDate: date
         });
       }
