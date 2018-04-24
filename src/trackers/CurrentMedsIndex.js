@@ -75,7 +75,9 @@ class CurrentMedsIndex extends Component {
         const currentMeds = this.state.currentMeds.length >= 1 ?
             <CurrentMedsDisplay currentMeds={this.state.currentMeds}
                 delete={this.currentMedsDelete} update={this.setUpdatedMeds} /> : 
+                <div className="display">
                 <h2 style={{borderBottom: "1px solid grey"}}>Log a current medication to see results</h2>
+                </div>
         return (
             
             <Container className="display">
