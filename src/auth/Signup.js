@@ -48,7 +48,7 @@ class Signup extends Component {
 
     handleSubmit = (event) => {
         if (this.state.usernameValid && this.state.passwordValid) {
-            fetch("https://tdesserich-healthtrackerclient.herokuapp.com/user/createuser", {
+            fetch("https://tdesserich-healthtrackerserver.herokuapp.com/user/createuser", {
                 method: 'POST',
                 body: JSON.stringify({ user: this.state }),
                 headers: new Headers({
