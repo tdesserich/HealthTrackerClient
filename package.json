@@ -10,6 +10,7 @@
     "or": "^0.2.0",
     "react": "^16.3.1",
     "react-calendar": "^2.14.0",
+    "react-date-picker-cs": "^0.1.28",
     "react-datepicker": "^1.4.1",
     "react-dom": "^16.3.1",
     "react-moment": "^0.7.0",

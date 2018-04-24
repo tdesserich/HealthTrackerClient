@@ -84,7 +84,7 @@ class DiscMedsUpdate extends Component {
                                 onChange={this.handleDateChange}
                                 selected={this.state.datePickerEndDate}
                                 readOnly
-                            />           
+                                />           
                             </FormGroup>
                             <Button type="submit" color="secondary" style={{height: "40px", width: "80px"}}> Submit </Button>
                         </Form>

@@ -58,6 +58,10 @@ class IncidentUpdate extends Component {
                             <FormGroup>
                                 <Label for="event">Event</Label>
                                 <Input id="event" type="text" name="event" value={this.state.event} placeholder="Update an event" onChange={this.handleChange} />
+                            </FormGroup>                            
+                            <FormGroup>
+                                <Label for="description">Description</Label>
+                                <Input id="description" type="text" name="description" value={this.state.description} placeholder="Description" onChange={this.handleChange} />
                             </FormGroup>
                             <FormGroup>
                                 <Label for="date">Date</Label>
@@ -67,10 +71,6 @@ class IncidentUpdate extends Component {
                                 selected={this.state.datePickerDate}
                                 readOnly
                             />           
-                            </FormGroup>
-                            <FormGroup>
-                                <Label for="description">Description</Label>
-                                <Input id="description" type="text" name="description" value={this.state.description} placeholder="Description" onChange={this.handleChange} />
                             </FormGroup>
                             <Button type="submit" color="secondary" style={{height: "40px", width: "80px"}}> Submit </Button>
                         </Form>
