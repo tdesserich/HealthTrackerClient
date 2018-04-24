@@ -35,7 +35,7 @@ class CurrentMedsCreate extends Component {
 
      handleSubmit = (event) => {
         event.preventDefault();
-        fetch('http://localhost:3000/currentmeds/', {
+        fetch('https://tdesserich-healthtrackerserver.herokuapp.com/currentmeds/', {
             method: 'POST',
             body: JSON.stringify({ currentMeds: this.state }),
             headers: new Headers({

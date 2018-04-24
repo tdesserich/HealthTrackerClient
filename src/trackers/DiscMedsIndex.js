@@ -20,7 +20,7 @@ class DiscMedsIndex extends Component {
     }
 
     fetchDiscMeds = () => {
-        fetch("http://localhost:3000/discmeds", {
+        fetch("https://tdesserich-healthtrackerserver.herokuapp.com/discmeds", {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ class DiscMedsIndex extends Component {
     }
 
     discMedsUpdate = (event, updatedMeds) => { 
-        fetch(`http://localhost:3000/discmeds/${updatedMeds.id}`, {
+        fetch(`https://tdesserich-healthtrackerserver.herokuapp.com/discmeds/${updatedMeds.id}`, {
             method: 'PUT', 
             body: JSON.stringify({ discMeds: updatedMeds }), 
             headers: new Headers({
@@ -56,7 +56,7 @@ class DiscMedsIndex extends Component {
     }
 
     discMedsDelete = (event, deletedMeds) => { 
-        fetch(`http://localhost:3000/discmeds/${deletedMeds.id}`, {
+        fetch(`https://tdesserich-healthtrackerserver.herokuapp.com/discmeds/${deletedMeds.id}`, {
             method: 'DELETE', 
             headers: new Headers({
                 'Content-Type': 'application/json',

@@ -33,7 +33,7 @@ class IncidentCreate extends Component {
     
     handleSubmit = (event) => {
         event.preventDefault();
-        fetch('http://localhost:3000/incident/', {
+        fetch('https://tdesserich-healthtrackerserver.herokuapp.com/incident/', {
             method: 'POST',
             body: JSON.stringify({ incident: this.state }),
             headers: new Headers({

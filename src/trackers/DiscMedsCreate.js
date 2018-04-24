@@ -35,7 +35,7 @@ class DiscMedsCreate extends Component {
     
     handleSubmit = (event) => {
         event.preventDefault();
-        fetch('http://localhost:3000/discmeds/', {
+        fetch('https://tdesserich-healthtrackerserver.herokuapp.com/discmeds/', {
             method: 'POST',
             body: JSON.stringify({ discMeds: this.state }),
             headers: new Headers({

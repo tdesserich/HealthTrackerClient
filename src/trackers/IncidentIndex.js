@@ -20,7 +20,7 @@ class IncidentIndex extends Component {
     }
 
     fetchIncident = () => {
-        fetch("http://localhost:3000/incident", {
+        fetch("https://tdesserich-healthtrackerserver.herokuapp.com/incident", {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ class IncidentIndex extends Component {
     }
 
    incidentUpdate = (event, updatedIncident) => { 
-        fetch(`http://localhost:3000/incident/${updatedIncident.id}`, {
+        fetch(`https://tdesserich-healthtrackerserver.herokuapp.com/incident/${updatedIncident.id}`, {
             method: 'PUT', 
             body: JSON.stringify({ incident: updatedIncident }), 
             headers: new Headers({
@@ -57,7 +57,7 @@ class IncidentIndex extends Component {
 
 
     incidentDelete = (event, updatedIncident) => { 
-        fetch(`http://localhost:3000/incident/${updatedIncident.id}`, {
+        fetch(`https://tdesserich-healthtrackerserver.herokuapp.com/${updatedIncident.id}`, {
             method: 'DELETE', 
             headers: new Headers({
                 'Content-Type': 'application/json',

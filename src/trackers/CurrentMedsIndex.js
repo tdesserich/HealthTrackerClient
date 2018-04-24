@@ -20,7 +20,7 @@ class CurrentMedsIndex extends Component {
     }
 
     fetchCurrentMeds = () => {
-        fetch("http://localhost:3000/currentmeds", {
+        fetch("https://tdesserich-healthtrackerserver.herokuapp.com/currentmeds", {
             method: 'GET',
             headers: new Headers({
                 'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ class CurrentMedsIndex extends Component {
     }
 
     currentMedsUpdate = (event, updatedMeds) => { 
-        fetch(`http://localhost:3000/currentmeds/${updatedMeds.id}`, {
+        fetch(`https://tdesserich-healthtrackerserver.herokuapp.com/currentmeds/${updatedMeds.id}`, {
             method: 'PUT', 
             body: JSON.stringify({ currentMeds: updatedMeds }), 
             headers: new Headers({
@@ -56,7 +56,7 @@ class CurrentMedsIndex extends Component {
     }
 
     currentMedsDelete = (event, deletedMeds) => { 
-        fetch(`http://localhost:3000/currentmeds/${deletedMeds.id}`, {
+        fetch(`https://tdesserich-healthtrackerserver.herokuapp.com/currentmeds/${deletedMeds.id}`, {
             method: 'DELETE', 
             headers: new Headers({
                 'Content-Type': 'application/json',
