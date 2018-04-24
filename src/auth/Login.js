@@ -46,7 +46,7 @@ class Login extends Component {
 
     handleSubmit = (event) => {
         if (this.state.usernameValid && this.state.passwordValid) {
-            fetch("http://localhost:3000/user/signin", {
+            fetch("https://tdesserich-healthtrackerclient.herokuapp.com/user/signin", {
                 method: 'POST',
                 body: JSON.stringify({ user: this.state }),
                 headers: new Headers({

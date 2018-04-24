@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Form, FormGroup, FormFeedback, Label, Input, Button } from 'reactstrap';
 
+// const BASE_URL_PROD = 'https://www.myapp.com';
+// const BASE_URL_LOCAL = 'localhost:8080'
+
 class Signup extends Component {
     constructor(props) {
         super(props)
@@ -45,7 +48,7 @@ class Signup extends Component {
 
     handleSubmit = (event) => {
         if (this.state.usernameValid && this.state.passwordValid) {
-            fetch("http://localhost:3000/user/createuser", {
+            fetch("https://tdesserich-healthtrackerclient.herokuapp.com/user/createuser", {
                 method: 'POST',
                 body: JSON.stringify({ user: this.state }),
                 headers: new Headers({
