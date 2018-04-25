@@ -71,7 +71,10 @@ class DiscMedsIndex extends Component {
     render() {
         const discMeds = this.state.discMeds.length >= 1 ?
             <DiscMedsDisplay discMeds={this.state.discMeds}
-                delete={this.discMedsDelete} update={this.setUpdatedMeds} /> : <h2 style={{borderBottom: "1px solid grey"}}>Log a discontinued medication to see results</h2>
+                delete={this.discMedsDelete} update={this.setUpdatedMeds} /> : 
+                <div className="display">
+                    <h2 style={{borderBottom: "1px solid grey"}}>Log a discontinued medication to see results</h2>
+                </div>    
         return (
             <Container className="display">
                 <Row>

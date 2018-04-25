@@ -72,7 +72,10 @@ class IncidentIndex extends Component {
     render() {
         const incident = this.state.incident.length >= 1 ?
             <IncidentDisplay incidentIndex={this.state.incident} delete={this.incidentDelete} update={this.setUpdatedIncident} /> 
-            : <h2 style={{borderBottom: "1px solid grey"}}>Log a medical event to see results</h2>
+            : 
+            <div className="display">
+                <h2 style={{borderBottom: "1px solid grey"}}>Log a medical event to see results</h2>
+            </div>    
         return (
             <Container className="display">
                 <Row>
